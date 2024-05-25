@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">appMedicacionSegura</string>
+    <string name="title_activity_main">appMedicacionSegura</string>
+    <string name="package_name">com.medicacionsegura.app</string>
+    <string name="custom_url_scheme">com.medicacionsegura.app</string>
+</resources>
