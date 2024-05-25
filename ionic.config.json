@@ -1,0 +1,7 @@
+{
+  "name": "appMedicacionSegura",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
