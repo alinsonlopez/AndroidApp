@@ -28,7 +28,7 @@ npm install -g @ionic/cli
 
 ## Ejecución del Proyecto
 ```sh
-shionic serve
+ionic serve
 ```
 Abre tu navegador web y navega a http://localhost:8100.
 
