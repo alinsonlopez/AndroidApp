@@ -32,7 +32,8 @@
 }
 
 ion-button {
-  --background: #F3F4F6;
+  --background: var(--ion-color-button-primary-backgrond);
+  color: #020202;
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   font-size: 16px;
