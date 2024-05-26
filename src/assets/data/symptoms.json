@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "nombre": "Dolor de cabeza"
+  },
+  {
+    "id": 2,
+    "nombre": "Fiebre"
+  },
+  {
+    "id": 3,
+    "nombre": "Dolor muscular"
+  },
+  {
+    "id": 4,
+    "nombre": "Dolor de muelas"
+  },
+  {
+    "id": 5,
+    "nombre": "Artritis"
+  },
+  {
+    "id": 6,
+    "nombre": "Dolores menstruales"
+  },
+  {
+    "id": 7,
+    "nombre": "Dolor de garganta"
+  },
+  {
+    "id": 8,
+    "nombre": "Infección de garganta"
+  },
+  {
+    "id": 9,
+    "nombre": "Infección de oído"
+  },
+  {
+    "id": 10,
+    "nombre": "Infección urinaria"
+  },
+  {
+    "id": 11,
+    "nombre": "Hipertensión"
+  },
+  {
+    "id": 12,
+    "nombre": "Insuficiencia cardíaca"
+  },
+  {
+    "id": 13,
+    "nombre": "Prevención de accidentes cerebrovasculares"
+  },
+  {
+    "id": 14,
+    "nombre": "Reflujo gástrico"
+  },
+  {
+    "id": 15,
+    "nombre": "Úlceras gástricas"
+  },
+  {
+    "id": 16,
+    "nombre": "Esofagitis"
+  },
+  {
+    "id": 17,
+    "nombre": "Colesterol alto"
+  },
+  {
+    "id": 18,
+    "nombre": "Prevención de enfermedades cardiovasculares"
+  },
+  {
+    "id": 19,
+    "nombre": "Diabetes tipo 2"
+  },
+  {
+    "id": 20,
+    "nombre": "Resistencia a la insulina"
+  },
+  {
+    "id": 21,
+    "nombre": "Alergias"
+  },
+  {
+    "id": 22,
+    "nombre": "Rinitis alérgica"
+  },
+  {
+    "id": 23,
+    "nombre": "Urticaria"
+  }
+]

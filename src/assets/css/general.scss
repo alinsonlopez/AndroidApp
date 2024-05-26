@@ -37,3 +37,17 @@ ion-icon {
 .black {
   color: #000000; /* Color negro */
 }
+
+ion-button.active.center {
+  margin-top: 16px;
+  --background: #3B82F6;
+  color: #FFFFFF;
+}
+
+ion-searchbar {
+  --background: #FFFFFF;
+}
+
+ion-title {
+  color: #000000;
+}
