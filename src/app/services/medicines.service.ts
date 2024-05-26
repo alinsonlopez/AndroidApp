@@ -1,18 +1,29 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+export interface Medicine {
+  id: number;
+  name: string;
+  image_url: string;
+  brand: string;
+  laboratory: string;
+  description: string;
+  symptoms: number[];
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class MedicinesService {
-  private medicineUrl = 'assets/data/medicines.json'; 
+  private httpClient = inject(HttpClient);
 
-  constructor(private http: HttpClient) { }
+  private medicineUrl = '../assets/data/medicines.json'; 
 
-  getMedicines(): Observable<any> {
-    return this.http.get(this.medicineUrl);
-  }
+  constructor() { }
 
-
+ // Método para obtener los medicamentos
+ getMedicines(): Observable<Medicine[]> {
+  return this.httpClient.get<Medicine[]>(this.medicineUrl);
+}
 }
