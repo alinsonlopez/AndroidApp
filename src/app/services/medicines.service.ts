@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 
 export interface Medicine {
   id: number;
-  name: string;
-  image_url: string;
-  brand: string;
-  laboratory: string;
-  description: string;
-  symptoms: number[];
+  nombre: string;
+  url_imagen: string;
+  marca: string;
+  laboratorio: string;
+  descripcion: string;
+  sintomas_asociados: number[];
+  sintomas_asociados_nombres: string[];
 }
 
 @Injectable({

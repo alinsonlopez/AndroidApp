@@ -3,6 +3,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MedicinesService, Medicine } from 'src/app/services/medicines.service';
+import { SymptomService, Symptom } from 'src/app/services/symptoms.service';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @Component({
@@ -15,6 +16,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 })
 export class MedicinesPage implements OnInit {
   medicines: Medicine[] = [];
+  symptoms: Symptom[] = [];
   chunkedMedications: Medicine[][] = [];
   slideOpts = {
     slidesPerView: 1,
@@ -24,15 +26,31 @@ export class MedicinesPage implements OnInit {
       clickable: true,
     },
     effect: 'slide'
-
   };
 
-  constructor(private medicineService: MedicinesService) { }
+  constructor(
+    private medicineService: MedicinesService,
+    private symptomService: SymptomService
+  ) {}
 
   ngOnInit() {
-    this.medicineService.getMedicines().subscribe(data => {
-      this.medicines = data;
-      this.chunkMedications();
+    this.medicineService.getMedicines().subscribe((medicines) => {
+      this.medicines = medicines;
+      this.symptomService.getSymptoms().subscribe((symptoms) => {
+        this.symptoms = symptoms;
+        this.mapSymptomsToMedicines();
+        this.chunkMedications();
+      });
+    });
+  }
+
+  mapSymptomsToMedicines() {
+    const symptomMap = new Map(this.symptoms.map((symptom) => [symptom.id, symptom.nombre]));
+
+    this.medicines.forEach((medicine) => {
+      medicine.sintomas_asociados_nombres = medicine.sintomas_asociados
+        .map((symptomId) => symptomMap.get(symptomId))
+        .filter((symptomName): symptomName is string => symptomName !== undefined);
     });
   }
 

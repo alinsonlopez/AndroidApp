@@ -4,20 +4,31 @@
   </ion-buttons>
 </ion-header>
 
-<div class="container"> 
-  <div class="page-container" >
+<div class="container">
+  <div class="page-container">
     <div class="page-title">Gestion de Medicamentos</div>
     <ion-searchbar placeholder="Buscar Medicamento"></ion-searchbar>
     <ion-slides [options]="slideOpts">
       <ion-slide *ngFor="let chunk of chunkedMedications">
         <ion-grid>
           <ion-row>
-            <ion-col size="6" *ngFor="let medication of chunk">
+            <ion-col size="6" *ngFor="let medicine of chunk">
               <ion-card>
-                <img [src]="medication.image_url" />
+                <!-- <img [src]="medicine.url_imagen" /> -->
+                <img src="../assets/icon/image.png" />
                 <ion-card-content>
-                  <ion-card-title>{{ medication.name }}</ion-card-title>
-                  <ion-button expand="block" color="primary">
+                  <ion-card-title>{{ medicine.nombre }}</ion-card-title>
+                  <ion-description>
+                    <ion-label>
+                      <p *ngIf="medicine.sintomas_asociados_nombres && medicine.sintomas_asociados_nombres.length > 0">
+                        Síntomas:
+                        <span *ngFor="let sintoma of medicine.sintomas_asociados_nombres; let last = last">
+                          {{ sintoma }}<span *ngIf="!last">, </span>
+                        </span>
+                      </p>
+                    </ion-label>
+                  </ion-description>
+                  <ion-button class="active center" expand="block">
                     <ion-icon class="fas fa-edit"></ion-icon>
                     Editar
                   </ion-button>
@@ -29,7 +40,7 @@
       </ion-slide>
     </ion-slides>
 
-    <ion-button class="active center" size="small">
+    <ion-button class="active center" expand="block" >
       <ion-icon class="fas fa-plus"></ion-icon>
       Añadir medicamentos
     </ion-button>
