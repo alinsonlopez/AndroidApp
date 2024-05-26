@@ -1,9 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.medicacionsegura.app',
+  appId: 'com.smed.app',
   appName: 'appMedicacionSegura',
-  webDir: 'www',
+  webDir: 'www'
 };
 
 export default config;

@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonMenuButton } from '@ionic/angular/standalone';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {IonicModule} from '@ionic/angular';
 import { RouterLink } from '@angular/router';
 
@@ -10,6 +7,7 @@ import { RouterLink } from '@angular/router';
   templateUrl: './medicines.page.html',
   styleUrls: ['./medicines.page.scss', '../../assets/css/general.scss'],
   standalone: true,
+  encapsulation: ViewEncapsulation.None, // Añadido para cambiar la encapsulación
   imports: [RouterLink, IonicModule]
 })
 export class MedicinesPage implements OnInit {

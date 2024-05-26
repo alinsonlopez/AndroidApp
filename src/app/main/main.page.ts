@@ -7,8 +7,8 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main',
-  templateUrl: './principal.page.html',
-  styleUrls: ['./principal.page.scss', '../../assets/css/general.scss'],
+  templateUrl: './main.page.html',
+  styleUrls: ['./main.page.scss', '../../assets/css/general.scss'],
   standalone: true,
   imports: [ RouterLink, IonicModule]
 })
