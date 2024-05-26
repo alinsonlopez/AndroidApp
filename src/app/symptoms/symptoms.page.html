@@ -4,15 +4,42 @@
   </ion-buttons>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-  </ion-header>
+<div class="container">
+  <div class="page-container">
+    <div class="page-title">Gestion de Sintomas</div>
+    <ion-searchbar placeholder="Buscar Sintomas"></ion-searchbar>
 
-  <div class="container">
+    <div class="card-container">
+
+      <ion-button size="small" (click)="prev()" *ngIf="currentChunk > 0" >
+        <ion-icon  class="fas fa-arrow-left" ></ion-icon>
+      </ion-button>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6" *ngFor="let symptom of chunkedSymptoms[currentChunk]">
+            <ion-card>
+              <img src="../assets/icon/symptom.png" />
+              <ion-card-content>
+                <ion-card-title>{{ symptom.nombre }}</ion-card-title>
+                <ion-button class="active center" expand="block">
+                  <ion-icon class="fas fa-edit"></ion-icon>
+                  Editar
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+      <ion-button size="small" (click)="next()" *ngIf="currentChunk < chunkedSymptoms.length - 1" >
+        <ion-icon  class="fas fa-arrow-right" ></ion-icon>
+      </ion-button>
+    </div>
+
+    <ion-button class="active center" expand="block">
+      <ion-icon class="fas fa-plus"></ion-icon>
+      Añadir Sistoma
+    </ion-button>
+  </div>
 </div>
-
-
-</ion-content>
