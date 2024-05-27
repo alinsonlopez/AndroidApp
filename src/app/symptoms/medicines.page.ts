@@ -18,15 +18,7 @@ export class MedicinesPage implements OnInit {
   medicines: Medicine[] = [];
   symptoms: Symptom[] = [];
   chunkedMedications: Medicine[][] = [];
-  slideOpts = {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    effect: 'slide'
-  };
+  currentChunk = 0;  
 
   constructor(
     private medicineService: MedicinesService,
@@ -58,6 +50,18 @@ export class MedicinesPage implements OnInit {
     this.chunkedMedications = [];
     for (let i = 0; i < this.medicines.length; i += 2) {
       this.chunkedMedications.push(this.medicines.slice(i, i + 2));
+    }
+  }
+
+  prev() {
+    if (this.currentChunk > 0) {
+      this.currentChunk--;
+    }
+  }
+
+  next() {
+    if (this.currentChunk < this.chunkedMedications.length - 1) {
+      this.currentChunk++;
     }
   }
 }
